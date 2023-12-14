@@ -1,0 +1,24 @@
+name: ECS Service Health Check
+
+description: GitHub Action which ensures that an ECS Service is healthy
+
+inputs:
+  cluster_name:
+    description: ECS Cluster Name
+    required: true
+  service_name:
+    description: ECS Service Name
+    required: true
+  timeout:
+    description: Health Check Timeout
+    default: 120
+
+runs:
+  using: "composite"
+  steps:
+    - run: '"$GITHUB_ACTION_PATH/ecs-service-health.sh" "$HEALTHCHECK_CLUSTER_NAME" "$HEALTHCHECK_SERVICE_NAME" "$HEALTHCHECK_TIMEOUT"'
+      shell: bash
+      env:
+        HEALTHCHECK_CLUSTER_NAME: ${{ inputs.cluster_name }}
+        HEALTHCHECK_SERVICE_NAME: ${{ inputs.service_name }}
+        HEALTHCHECK_TIMEOUT: ${{ inputs.timeout }}

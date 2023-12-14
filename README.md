@@ -31,7 +31,7 @@ jobs:
       # - name: Deploy ECS Service
       #   ...
       - name: Check ECS Service Health
-        uses: giner/ecs-service-health-action@main  # v1.0.0
+        uses: giner/ecs-service-health-action@41f879a3c312f01d997bf5ba6ca3765fc6021b10  # v1.0.0
         with:
           cluster_name: mycluster
           service_name: myservice

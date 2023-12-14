@@ -1,5 +1,5 @@
 # ecs-service-health-action
-GitHub Action which ensures that ECS Service is healthy. This action checks load balancer health state if attached to the service and container health otherwise.
+GitHub Action which ensures that ECS Service is healthy. This action checks load balancer health state if attached to the service and container healthcheck status otherwise.
 
 ## Inputs
 
